@@ -1,6 +1,7 @@
 'use strict';
 var window_width = window.innerWidth,
-	fixed = document.getElementById('fixed');
+	fixed = document.getElementById('fixed'),
+	lastKnownScrollY = window.scrollY;
 
 if(window_width > 479){
 	parallax(true);
@@ -17,15 +18,15 @@ window.onscroll = function(){
 	if(window_width > 479){
 		var t='';
 		clearTimeout(t);
+		lastKnownScrollY = window.scrollY;
 		t = setTimeout(function(){
 			sticky_nav();
 			dot_nav();
 			parallax(true);
 			fade_at_top(true);
 			logo_fill();
-		}, 16);
+		}, 10);
 	}
-	console.log(window.scrollY);
 };
 
 window.onresize = function(){

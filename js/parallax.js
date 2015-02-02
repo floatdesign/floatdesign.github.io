@@ -31,13 +31,13 @@ function parallax($active){
 	});
 };
 
-window.onscroll = function(){
-	var lastKnownScrollY = window.scrollY;
-	console.log(lastKnownScrollY);
-};
+// window.onscroll = function(){
+// 	var lastKnownScrollY = window.scrollY;
+// 	console.log(lastKnownScrollY);
+// };
 
-function update(){
-	requestAnimationFrame(update);
+// function update(){
+// 	requestAnimationFrame(update);
 	
-	var currentScrollY = latestKnownScrollY;
-}
+// 	var currentScrollY = latestKnownScrollY;
+// }

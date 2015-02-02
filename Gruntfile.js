@@ -3,9 +3,21 @@ module.exports = function(grunt) {
   // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+    concat: {
+      options: {
+        separator: ';',
+      },
+      dist: {
+        src: ['js/jquery.min.js', 'js/element_ids.js', 'js/dot_nav.js', 'js/fade_at_top.js', 'js/logo_fill.js', 'js/mobile_nav.js', 'js/parallax.js', 'js/scroll_page.js', 'js/sticky_nav.js', 'js/works_slider.js', 'js/function_calls.js'],
+        dest: 'js/build/js-concat.js',
+      },
+    },
     uglify: {
+      options: {
+        beautify: true,
+      },
       build: {
-        src: ['js/*.js'], //input
+        src: ['js/build/js-concat.js'], //input
         dest: 'js/build/global.min.js' //output
       }
     },
@@ -87,7 +99,7 @@ module.exports = function(grunt) {
 
       js: {
         files: ['js/*.js'],
-        tasks: ['uglify']
+        tasks: ['concat', 'uglify']
       },
 
       images: {
@@ -102,6 +114,6 @@ module.exports = function(grunt) {
 
   // Default tasks
   grunt.registerTask('serve', ['shell:jekyllServe']);
-  grunt.registerTask('default', ['uglify', 'svgstore', 'sass', 'autoprefixer', 'shell:jekyllBuild', 'watch']);
+  grunt.registerTask('default', ['concat', 'uglify', 'svgstore', 'sass', 'autoprefixer', 'shell:jekyllBuild', 'watch']);
 
 };
