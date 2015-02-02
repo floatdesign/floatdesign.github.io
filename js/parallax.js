@@ -3,6 +3,9 @@ function parallax($active){
 	Array.prototype.forEach.call(elements, function(index){
 		var centerContent = index.getElementsByClassName('center-content')[0];
 		if($active === true){
+			var t ='';
+			clearTimeout(t);
+			t = setTimeout(function(){
 			var height        = index.offsetHeight,
 			    offsetTop     = index.offsetTop,
 				toTop         = window.pageYOffset,
@@ -20,9 +23,21 @@ function parallax($active){
 			else if(toTop <= offsetTop){
 				centerContent.removeAttribute('style');
 			}
+		}, 16);
 		}
 		else{
 			centerContent.removeAttribute('style');
 		}
 	});
 };
+
+window.onscroll = function(){
+	var lastKnownScrollY = window.scrollY;
+	console.log(lastKnownScrollY);
+};
+
+function update(){
+	requestAnimationFrame(update);
+	
+	var currentScrollY = latestKnownScrollY;
+}

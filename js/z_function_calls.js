@@ -25,6 +25,7 @@ window.onscroll = function(){
 			logo_fill();
 		}, 16);
 	}
+	console.log(window.scrollY);
 };
 
 window.onresize = function(){

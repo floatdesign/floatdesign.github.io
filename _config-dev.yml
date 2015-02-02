@@ -1,0 +1,21 @@
+# Site settings
+title: floatdev
+email: team@floatdev.com
+description: > # Web Development out of Portland Oregon.
+baseurl: "http://float-dev.github.io"
+url: "http://floatdev.com" # the base hostname & protocol for your site
+twitter_username: floatdev
+github_username:  float-dev
+exclude: [
+	.gitignore,
+	CNAME,
+	svgs,
+	scss,
+	package.json,
+	Gruntfile.js,
+	node_modules,
+	README.md
+]
+
+# Build settings
+markdown: kramdown

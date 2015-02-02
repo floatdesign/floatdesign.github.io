@@ -4,7 +4,7 @@ function works_slider(){
     siteNames[1] = 'creek';
 
     var length = siteNames.length,
-	    j = 0,
+	    j = 0, // index for site names
 	    arrows = document.querySelectorAll('.arrow-wrap');
 
 	[].forEach.call(arrows, function(index){
@@ -20,9 +20,12 @@ function works_slider(){
 		        all           = document.querySelectorAll('.icon-phone, .icon-desktop, .icon-tablet'),
 		        windowWidth   = window.innerWidth,
 
+		        // gets distance to left of screen from the element
 		        phoneOffset       = phone.getBoundingClientRect().left,
 		        desktopOffset     = desktop.getBoundingClientRect().left,
 		        tabletOffset      = tablet.getBoundingClientRect().left,
+
+		        // get width of elements for calculations
 		        phoneWidth        = phone.offsetWidth,
 		        desktopWidth      = desktop.offsetWidth,
 		        tabletWidth       = tablet.offsetWidth,
@@ -31,13 +34,16 @@ function works_slider(){
 		        keepOn = true;
 
 			if(this.classList.contains('right') && j <length - 1){
-				++j;
+				++j; // increment index
+
+				// change active dot
 				for(var i=0; i<siteNames.length; i++){
                      document.getElementById(siteNames[i] + '-dot').classList.remove('active');
                 }
 				var dot = document.getElementById(siteNames[j] + '-dot');
 				dot.classList.add('active');
 
+				//slide content of the left side of page
 				phone.style['left'] = '-' + (phoneOffset + phoneWidth) + 'px';
 				desktop.style['left'] = '-' + (desktopOffset + desktopWidth) + 'px';
 				tablet.style['right'] = tabletOffset + tabletWidth + 'px';
@@ -45,12 +51,15 @@ function works_slider(){
 				siteTitle.classList.add('fade-out');
 				siteDesc.classList.add('fade-out');
 
+				// once content is off screen do all of this
 				setTimeout(function(){
+					// remove transition so we can move svgs over to the other side to slide back in
 					for(var i=0; i<all.length; ++i){
 						all[i].style.transition = 'none';
 						all[i].style.webkitTransition = 'none';
 					}
 
+					// move content off the right side of screen change screenshots
 					phone.style['left'] = windowWidth - phoneOffset + 'px';
 					desktop.style['left'] = windowWidth - desktopOffset + 'px';
 					tablet.style['right'] = '-' + tabletWidth + 'px';
@@ -60,6 +69,7 @@ function works_slider(){
 					siteTitle.className = siteNames[j] + '-color';
 					siteDesc.className = siteNames[j] + '-content';
 
+					// remove all atrributes. This also makes the content slide back in
 					setTimeout(function(){
 						for(var i=0; i<all.length; ++i){
 							all[i].removeAttribute('style');
@@ -70,6 +80,7 @@ function works_slider(){
 				}, 500); 
 			}
 
+			// do the same thing as previous but the opposite
 			if(this.classList.contains('left') && j!=0){
 				--j;
 				for(var i=0; i<siteNames.length; i++){
@@ -106,7 +117,7 @@ function works_slider(){
 						}
 						siteTitle.classList.remove('fade-out');
 						siteDesc.classList.remove('fade-out');
-					},10);
+					},20);
 				}, 500); 
 			}
 		});
