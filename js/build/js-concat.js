@@ -66,19 +66,23 @@ setTimeout(function(){
 				logoBottom    = logoOffsetBottom + 20;
 
 			if(indexToTop <= logoBottom && indexToTop > -indexHeight){
+				index.classList.remove('full-opacity');
+				index.classList.remove('zero-opacity');
 				index.style.opacity = (indexToBottom)/(logoBottom + indexHeight);
 			}
 
 			else if(indexToTop > logoBottom){
-				index.style.opacity = 1;
+				index.classList.add('full-opacity');
+				index.classList.remove('zero-opacity');
 			}	
 
 			else if(indexToTop < -indexHeight){
-				index.style.opacity = 0;
+				index.classList.remove('full-opacity');
+				index.classList.add('zero-opacity');
 			}
 		}
 		else{
-			index.style.opacity = 1;
+			index.classList.add('full-opacity');
 		}
 	});
 };;function logo_fill(){
