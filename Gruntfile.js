@@ -13,9 +13,6 @@ module.exports = function(grunt) {
       },
     },
     uglify: {
-      options: {
-        beautify: true,
-      },
       build: {
         src: ['js/build/js-concat.js'], //input
         dest: 'js/build/global.min.js' //output
@@ -114,6 +111,6 @@ module.exports = function(grunt) {
 
   // Default tasks
   grunt.registerTask('serve', ['shell:jekyllServe']);
-  grunt.registerTask('default', ['concat', 'uglify', 'svgstore', 'sass', 'autoprefixer', 'shell:jekyllBuild', 'watch']);
+  grunt.registerTask('default', ['concat', 'uglify', 'svgstore', 'sass', 'autoprefixer', 'imagemin', 'shell:jekyllBuild', 'watch']);
 
 };

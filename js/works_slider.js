@@ -63,9 +63,9 @@ function works_slider(){
 					phone.style['left'] = windowWidth - phoneOffset + 'px';
 					desktop.style['left'] = windowWidth - desktopOffset + 'px';
 					tablet.style['right'] = '-' + tabletWidth + 'px';
-					phoneScreen.setAttribute('xlink:href', 'images/build/' + siteNames[j] + '-phone.jpg');
-					desktopScreen.setAttribute('xlink:href', 'images/build/' + siteNames[j] + '-desktop.jpg');
-					tabletScreen.setAttribute('xlink:href', 'images/build/' + siteNames[j] + '-tablet.jpg');
+					phoneScreen.setAttribute('xlink:href', 'images/' + siteNames[j] + '-phone.jpg');
+					desktopScreen.setAttribute('xlink:href', 'images/' + siteNames[j] + '-desktop.jpg');
+					tabletScreen.setAttribute('xlink:href', 'images/' + siteNames[j] + '-tablet.jpg');
 					siteTitle.className = siteNames[j] + '-color';
 					siteDesc.className = siteNames[j] + '-content';
 
@@ -105,9 +105,9 @@ function works_slider(){
 					phone.style['left'] = '-' + (phoneOffset + phoneWidth) + 'px';
 					desktop.style['left'] = '-' + (desktopOffset + desktopWidth) + 'px';
 					tablet.style['right'] = (tabletOffset + tabletWidth) + 'px';
-					phoneScreen.setAttribute('xlink:href', 'images/build/' + siteNames[j] + '-phone.jpg');
-					desktopScreen.setAttribute('xlink:href', 'images/build/' + siteNames[j] + '-desktop.jpg');
-					tabletScreen.setAttribute('xlink:href', 'images/build/' + siteNames[j] + '-tablet.jpg');
+					phoneScreen.setAttribute('xlink:href', 'images/' + siteNames[j] + '-phone.jpg');
+					desktopScreen.setAttribute('xlink:href', 'images/' + siteNames[j] + '-desktop.jpg');
+					tabletScreen.setAttribute('xlink:href', 'images/' + siteNames[j] + '-tablet.jpg');
 					siteTitle.className = siteNames[j] + '-color';
 					siteDesc.className = siteNames[j] + '-content';
 

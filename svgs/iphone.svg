@@ -13,5 +13,5 @@
 	c0-44.731-36.264-80.996-80.987-80.996c-44.732,0-80.996,36.265-80.996,80.996c0,44.734,36.264,80.996,80.996,80.996
 	C587.745,2157.135,624.009,2120.873,624.009,2076.139z"/>
 <rect x="64" y="264" fill="none" stroke="#FF7D25" stroke-width="9" stroke-miterlimit="10" width="956" height="1688"/>
-<image id="screen" class="phone-screen" x="66" y="266" width="954" height="1682" xlink:href="images/build/forge-phone.jpg"></image>
+<image id="screen" class="phone-screen" x="66" y="266" width="954" height="1682" xlink:href="images/forge-phone.jpg"></image>
 </svg>
