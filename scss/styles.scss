@@ -415,7 +415,6 @@ body{
 
 	.images-wrap{
 		width: 100%;
-		overflow:hidden;
 	}
 
 	.responsive{
@@ -634,10 +633,6 @@ body{
 	#site-name, #site-desc{
 		opacity: 1;
 		transition: opacity .3s ease-in-out;
-	}
-
-	.description{
-		padding-bottom: 60px;
 	}
 
 	.fade-out{
