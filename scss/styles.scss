@@ -29,12 +29,11 @@ html,body, .body-container{
 body{
 	background:$float-orange;
 	position:relative;
-	overflow-x: hidden;
 }
 
 .container { 
 	margin: 0 auto; 
-	max-width: 9cd0%;
+	max-width: 90%;
 	height: 100%;
 }
 
@@ -50,6 +49,10 @@ body{
 
 .zero-opacity{
 	opacity: 0 !important;
+}
+
+.hard-accell{
+	transform: translate3d(0,0,0);
 }
 
 /******** Logo ********/
@@ -105,22 +108,22 @@ body{
 } */
 /******** Top Page ********/
 #home {
-	background: url("../../images/orange.jpg") center center fixed no-repeat;
-	background-size: cover;
 	position:relative;
 	text-align:center;
 	z-index:-1;
 
-	@include mq(phone){
-		background: none;
-	}
-
 	.fixed-center-wrapper{
+		background: url("../../images/orange.jpg") center center no-repeat;
+		background-size: cover;
 		position: fixed;
+		transform: translate3d(0,0,0);
+		-webkit-backface-visibility: hidden;
+		transform-style:flat;
 		width: 100%;
 		height: 100%;
 		display: flex;
 		top:0;
+		z-index:0;
 		@include mq(phone){
 			background: url("../../images/orange-mobile.jpg") center center no-repeat;
 			background-size: cover;
@@ -643,7 +646,7 @@ body{
 	}
 
 	.creek-content:after{
-		content: "Creekside pizza needed a site to create a better pre-dining experience for their customers. They site is layed out so that someone can find exactly what they are looking for no matter what device they are using.";
+		content: "Creekside pizza needed a site to create a better pre-dining experience for their customers. The site is layed out so that someone can find exactly what they are looking for no matter what device they are using.";
 	}
 
 	.forge-content:after{
@@ -654,9 +657,10 @@ body{
 /******** Contact ********/
 #contact {
 	text-align:center;
-	background: url("../../images/orange-city.jpg")  center center fixed no-repeat;
+	background: url("../../images/orange-city.jpg")  center center no-repeat;
 	background-size: cover;
 	color: white;
+	z-index:2;
 
 	@include mq(phone){
 		background: url("../../images/orange-city-mobile.jpg")  center center no-repeat;

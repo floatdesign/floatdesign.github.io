@@ -1,31 +1,21 @@
-function fade_at_top($active){
-	var elements = document.querySelectorAll('h1, h2, p, .container svg'),
-		logoOffsetBottom    = 60; //logo height + margin top, marks the bottom of logo
-	Array.prototype.forEach.call(elements, function(index){
-		if($active === true){
-			var indexToTop    = index.getBoundingClientRect().top,
-				indexToBottom = index.getBoundingClientRect().bottom,
-				indexHeight   = index.offsetHeight,
-				logoBottom    = logoOffsetBottom + 20;
-
-			if(indexToTop <= logoBottom && indexToTop > -indexHeight){
-				index.classList.remove('full-opacity');
-				index.classList.remove('zero-opacity');
-				index.style.opacity = (indexToBottom)/(logoBottom + indexHeight);
-			}
-
-			else if(indexToTop > logoBottom){
-				index.classList.add('full-opacity');
-				index.classList.remove('zero-opacity');
-			}	
-
-			else if(indexToTop < -indexHeight){
-				index.classList.remove('full-opacity');
-				index.classList.add('zero-opacity');
-			}
+function fade_at_top(){
+	[].forEach.call(fadeElements, function(elem, i, a){
+		if(logoBottom >= fadeElemOffset[i] && lastKnownScrollY < fadeElemOffset[i] + fadeElemHeight[i]){
+			fadeElements[i].classList.remove('full-opacity');
+			fadeElements[i].classList.remove('zero-opacity');
+			fadeElements[i].style.opacity = 1 - ((logoBottom - fadeElemOffset[i])/(fadeElemHeight[i] + 60));
 		}
-		else{
-			index.classList.add('full-opacity');
+
+		else if(logoBottom < fadeElemOffset[i]){
+			elem.classList.add('full-opacity');
+			elem.classList.remove('zero-opacity');
+			elem.removeAttribute('style');
+		}	
+
+		else if(lastKnownScrollY > fadeElemOffset[i] + fadeElemHeight[i]){
+			elem.classList.remove('full-opacity');
+			elem.classList.add('zero-opacity');
+			elem.removeAttribute('style');
 		}
 	});
 };

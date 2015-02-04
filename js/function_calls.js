@@ -4,28 +4,25 @@ var window_width = window.innerWidth,
 	lastKnownScrollY = window.scrollY;
 
 if(window_width > 479){
-	parallax(true);
+	parallax();
 	sticky_nav();
 }
 else{
-	parallax(false);
-	fade_at_top(false);
-	fixed.style['height'] = window.innerHeight +'px'; //fix for mobile browser resize on scroll
+	//fixed.style['height'] = window.innerHeight +'px'; //fix for mobile browser resize on scroll
 }
 works_slider();
 
 window.onscroll = function(){
 	if(window_width > 479){
-		var t='';
-		clearTimeout(t);
 		lastKnownScrollY = window.scrollY;
-		t = setTimeout(function(){
-			sticky_nav();
-			dot_nav();
-			parallax(true);
-			fade_at_top(true);
-			logo_fill();
-		}, 10);
+		logoBottom = lastKnownScrollY + 60;
+		logoTop = lastKnownScrollY + 20;
+
+		requestAnimationFrame(dot_nav);
+		requestAnimationFrame(parallax);
+		requestAnimationFrame(sticky_nav);
+		requestAnimationFrame(fade_at_top);
+		requestAnimationFrame(logo_fill);
 	}
 };
 
@@ -34,12 +31,9 @@ window.onresize = function(){
 		window_width = window.innerWidth;
 	}, 300);
 	if(window_width > 479){
-		logo_fill();
-		parallax(true);
-	    fade_at_top(true);
-	}
-	else{
-		fade_at_top(false);
-		parallax(false);
+		requestAnimationFrame(reset_vars);
+		requestAnimationFrame(logo_fill);
+		requestAnimationFrame(parallax);
+	    requestAnimationFrame(fade_at_top);
 	}
 };

@@ -1,43 +1,26 @@
-function parallax($active){
-	var elements = document.querySelectorAll('.parallax');
-	Array.prototype.forEach.call(elements, function(index){
-		var centerContent = index.getElementsByClassName('center-content')[0];
-		if($active === true){
-			var t ='';
-			clearTimeout(t);
-			t = setTimeout(function(){
-			var height        = index.offsetHeight,
-			    offsetTop     = index.offsetTop,
-				toTop         = window.pageYOffset,
-				windowHeight  = window.innerHeight,
-				centerHeight  = centerContent.clientHeight,
-				scrollTotal   = (height - centerHeight)/2,
-				percentage    = (toTop - offsetTop) / windowHeight,
-				translate     = scrollTotal * percentage + 'px';
+function parallax(){
+	[].forEach.call(parallaxContent, function(elem, i, a){
+		 var scrollTotal   = (windowHeight - parallaxHeight[i])/2,
+			 percentage    = (lastKnownScrollY - parallaxSectionOffset[i]) / windowHeight,
+			 translate     = scrollTotal * percentage + 'px';
 
-			if(toTop > offsetTop && percentage <= 1){
-				centerContent.style.transform = 'translate3d(0,' + translate + ',0)';
-				centerContent.style.webkitTransform = 'translate3d(0,' + translate + ',0)';
+		if(lastKnownScrollY > parallaxSectionOffset[i] && percentage <= 1){
+			elem.style.transform = 'translate3d(0,' + translate + ',0)';
+			elem.style.webkitTransform = 'translate3d(0,' + translate + ',0)';
+			if(i == 0){
+				fadeElemOffset[0] = parallaxElemOffset[0] + parseInt(translate);
+				fadeElemOffset[1] = parallaxElemOffset[1] + parseInt(translate);
 			}
-
-			else if(toTop <= offsetTop){
-				centerContent.removeAttribute('style');
+			else{
+				fadeElemOffset[16] = parallaxElemOffset[2] + parseInt(translate);
+				fadeElemOffset[17] = parallaxElemOffset[3] + parseInt(translate);	
 			}
-		}, 16);
 		}
-		else{
-			centerContent.removeAttribute('style');
+		else if(lastKnownScrollY <= parallaxSectionOffset[i]){
+			elem.removeAttribute('style');
+			scrollTotal   = null;
+			percentage    = null;
+			translate     = null;
 		}
 	});
 };
-
-// window.onscroll = function(){
-// 	var lastKnownScrollY = window.scrollY;
-// 	console.log(lastKnownScrollY);
-// };
-
-// function update(){
-// 	requestAnimationFrame(update);
-	
-// 	var currentScrollY = latestKnownScrollY;
-// }

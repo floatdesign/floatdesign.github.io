@@ -1,5 +1,4 @@
 var stickPoint = document.getElementById('mission').offsetTop; //stick when second section reaches top
-var lastKnownScrollY = window.scrollY;
 var triggered = 0;
 function sticky_nav(){
 	if(stickPoint <= lastKnownScrollY && triggered === 0){
