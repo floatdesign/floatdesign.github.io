@@ -464,7 +464,7 @@ if(window_width > 479){
 	sticky_nav();
 }
 else{
-	//fixed.style['height'] = window.innerHeight +'px'; //fix for mobile browser resize on scroll
+	fixed.style['height'] = window.innerHeight +'px'; //fix for mobile browser resize on scroll
 }
 works_slider();
 
