@@ -29,7 +29,7 @@
 	parallaxSectionOffset = [];
 
 
-var fadeElements = document.querySelectorAll('.section h1, .section h2, .section p, .container svg');
+var fadeElements = document.querySelectorAll('.section h1, .section h2, .section p, .svg-wrap');
 var parallaxElems = document.querySelectorAll('.parallax h1, .parallax p');
 var parallaxContent = document.querySelectorAll('.parallax .center-content');
 
@@ -358,16 +358,15 @@ function sticky_nav(){
 		        tabletOffset      = tablet.getBoundingClientRect().left,
 
 		        // get width of elements for calculations
-		        phoneWidth        = phone.offsetWidth,
-		        desktopWidth      = desktop.offsetWidth,
-		        tabletWidth       = tablet.offsetWidth,
+		        phoneWidth        = all[0].offsetWidth,
+		        desktopWidth      = all[1].offsetWidth,
+		        tabletWidth       = all[2].offsetWidth,
 		        side,
 		        oppSide,
 		        keepOn = true;
 
 			if(this.classList.contains('right') && j <length - 1){
 				++j; // increment index
-
 				// change active dot
 				for(var i=0; i<siteNames.length; i++){
                      document.getElementById(siteNames[i] + '-dot').classList.remove('active');
@@ -376,9 +375,9 @@ function sticky_nav(){
 				dot.classList.add('active');
 
 				//slide content of the left side of page
-				phone.style['left'] = '-' + (phoneOffset + phoneWidth) + 'px';
-				desktop.style['left'] = '-' + (desktopOffset + desktopWidth) + 'px';
-				tablet.style['right'] = tabletOffset + tabletWidth + 'px';
+				all[0].style.left = -(phoneOffset + phoneWidth) + 'px';
+				all[1].style.left = -(desktopOffset + desktopWidth) + 'px';
+				all[2].style.right = tabletOffset + tabletWidth + 'px';
 
 				siteTitle.classList.add('fade-out');
 				siteDesc.classList.add('fade-out');
@@ -392,9 +391,9 @@ function sticky_nav(){
 					}
 
 					// move content off the right side of screen change screenshots
-					phone.style['left'] = windowWidth - phoneOffset + 'px';
-					desktop.style['left'] = windowWidth - desktopOffset + 'px';
-					tablet.style['right'] = '-' + tabletWidth + 'px';
+					all[0].style.left = windowWidth - phoneOffset + 'px';
+					all[1].style.left = windowWidth - desktopOffset + 'px';
+					all[2].style.right = '-' + tabletWidth + 'px';
 					phoneScreen.setAttribute('xlink:href', 'images/' + siteNames[j] + '-phone.jpg');
 					desktopScreen.setAttribute('xlink:href', 'images/' + siteNames[j] + '-desktop.jpg');
 					tabletScreen.setAttribute('xlink:href', 'images/' + siteNames[j] + '-tablet.jpg');
@@ -421,9 +420,9 @@ function sticky_nav(){
 				var dot = document.getElementById(siteNames[j] + '-dot');
 				dot.classList.add('active');
 
-				phone.style['left'] = (windowWidth - phoneOffset + phoneWidth) + 'px';
-				desktop.style['left'] = windowWidth - desktopOffset + 'px';
-				tablet.style['right'] = '-' + (windowWidth - tabletOffset) + 'px';
+				all[0].style['left'] = (windowWidth - phoneOffset + phoneWidth) + 'px';
+				all[1].style['left'] = (windowWidth - desktopOffset) + 'px';
+				all[2].style['right'] = '-' + (windowWidth - tabletOffset) + 'px';
 
 				siteTitle.classList.add('fade-out');
 				siteDesc.classList.add('fade-out');
@@ -434,9 +433,9 @@ function sticky_nav(){
 						all[i].style.webkitTransition = 'none';
 					}
 
-					phone.style['left'] = '-' + (phoneOffset + phoneWidth) + 'px';
-					desktop.style['left'] = '-' + (desktopOffset + desktopWidth) + 'px';
-					tablet.style['right'] = (tabletOffset + tabletWidth) + 'px';
+					all[0].style['left'] = ('-' + (phoneOffset + phoneWidth)) + 'px';
+					all[1].style['left'] = ('-' + (desktopOffset + desktopWidth)) + 'px';
+					all[2].style['right'] = (tabletOffset + tabletWidth) + 'px';
 					phoneScreen.setAttribute('xlink:href', 'images/' + siteNames[j] + '-phone.jpg');
 					desktopScreen.setAttribute('xlink:href', 'images/' + siteNames[j] + '-desktop.jpg');
 					tabletScreen.setAttribute('xlink:href', 'images/' + siteNames[j] + '-tablet.jpg');

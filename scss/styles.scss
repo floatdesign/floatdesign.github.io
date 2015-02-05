@@ -271,11 +271,16 @@ body{
  		border-radius: 100px;
  	}
 
+ 	.svg-wrap{
+		width: 100px;
+		height: 100px;
+		float: left;
+		vertical-align: middle;
+	}
+
  	svg{
- 		width: 100px;
- 		height: 100px;
- 		float:left;
- 		vertical-align: middle;
+ 		width: 100%;
+ 		height: 100%;
  	}
 
  	.container{
@@ -351,15 +356,24 @@ body{
 		padding:0;
 		margin-bottom: 50px;
 	}
-	
-	svg{
-		width:160px;
-		height:160px;
-		margin-bottom: 40px;
+
+	.svg-wrap{
+		width: 160px;
+		height: 160px;
+		display: inline-block;
 
 		@include mq(phone){
 			width: 120px;
 			height: 120px;
+		}
+	}
+	
+	svg{
+		width:100%;
+		height:100%;
+		margin-bottom: 40px;
+
+		@include mq(phone){
 			margin-bottom: 5px;
 			margin-top: 20px;
 		}
@@ -474,12 +488,18 @@ body{
 			height: $phone-height;
 			width: $phone-height*0.488;
 		}
+
+		#icon-phone{
+			width: 100%;
+			height: 100%;
+		}
 	}
 	.icon-desktop{
 		$desktop-height: 400px;
 		height:$desktop-height;
 		width:$desktop-height*1.69;
 		position: relative;
+		display: inline-block;
 		z-index: 1;
 		right: 0;
 		left: 0;
@@ -516,6 +536,11 @@ body{
 			$desktop-height: 400px * .5;
 			height:$desktop-height;
 			width:$desktop-height*1.69;
+		}
+
+		#icon-desktop{
+			width: 100%;
+			height: 100%;
 		}
 	}
 
@@ -564,6 +589,11 @@ body{
 			$tablet-height: 320px *.5;
 			height: $tablet-height;
 			width: $tablet-height*0.7077;
+		}
+
+		#icon-tablet{
+			width: 100%;
+			height: 100%;
 		}
 	}
 
