@@ -33,9 +33,6 @@ var fadeElements = document.querySelectorAll('.section h1, .section h2, .section
 var parallaxElems = document.querySelectorAll('.parallax h1, .parallax p');
 var parallaxContent = document.querySelectorAll('.parallax .center-content');
 
-[].forEach.call(parallaxContent, function(elem, i, a){
-	parallaxHeight[i] = elem.clientHeight;
-});
 
 var getElemDistance = function ( elem ) {
     var location = 0;
@@ -49,6 +46,10 @@ var getElemDistance = function ( elem ) {
 };
 
 setTimeout(function(){
+	[].forEach.call(parallaxContent, function(elem, i, a){
+		parallaxHeight[i] = elem.clientHeight;
+	});
+	
 	[].forEach.call(fadeElements, function(elem, i, a){
 		fadeElemHeight[i] = elem.clientHeight;
 		fadeElemOffset[i] = getElemDistance(elem);
@@ -467,6 +468,7 @@ else{
 	fixed.style['height'] = window.innerHeight +'px'; //fix for mobile browser resize on scroll
 }
 works_slider();
+reset_vars();
 
 window.onscroll = function(){
 	if(window_width > 479){

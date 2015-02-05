@@ -1,4 +1,4 @@
-.mobile-clicker{
+/* .mobile-clicker{
 	display:none;
 	position: fixed;
 	bottom: 20px;
@@ -26,7 +26,6 @@
 
 		use{
 			fill: #ff7d25;
-			/* transition: fill .3s ease-in-out; */
 		}
 	}
 }
@@ -40,7 +39,7 @@
 	opacity: 0;
 	z-index: 100;
 	pointer-events:none;
-	transition: opacity .3s ease-in-out/* , background .3s ease-in-out */;
+	transition: opacity .3s ease-in-out;
 
 	ul{
 		z-index: 1000;
@@ -76,7 +75,7 @@
 			}
 		}
 	}
-}
+} */
 
 .open{
 	opacity: 1 !important;
@@ -84,74 +83,10 @@
 }
 
 .rotate{
-	// background: #ff7d25;
-	background: none;
-	box-shadow: none;
+	background: none !important;
+	box-shadow: none !important;
 
 	#f{
 		transform: rotate(180deg);
-
-		use{
-			// fill: #fafafa;
-		}
 	}
-}
-
-.mobile-nav{
-	height: 0px;
-	width: 100%;
-	background: $float-orange-o;
-	border-bottom: 1px solid $float-orange;
-	position: fixed;
-	top: 40px;
-	z-index: 2000;
-	line-height: 40px;
-	font-size: 2em;
-	-webkit-transform: translate3d(0, 0, 0);
-	overflow:hidden;
-	display:none;
-
-	transition: height .2s ease-in-out, top .2s ease-in-out;
-
-	@include mq(phone){
-		display: inline-block;
-	}
-
-	div{
-		width: 100%;
-		overflow: scroll;
-		-webkit-overflow-scrolling: touch;
-		white-space: nowrap;
-		height: 55px; // to hide the scroll bar
-	}
-
-	ul{
-		display: inline;
-		text-decoration: none;
-		padding: 0;
-		padding-left:5%;
-		padding-right:5%;
-		
-		li:first-child{
-			padding-left:0;
-		}
-
-		li:last-child{
-			padding-right:0;
-		}
-
-		li{
-			display: inline;
-			padding: 0 7px;
-
-			a{
-				color: $float-orange;
-			}
-		}
-	}
-}
-
-.nav-open{
-	height: 40px;
-	top: 41px;
 }

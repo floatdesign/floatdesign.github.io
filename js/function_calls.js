@@ -11,6 +11,7 @@ else{
 	fixed.style['height'] = window.innerHeight +'px'; //fix for mobile browser resize on scroll
 }
 works_slider();
+reset_vars();
 
 window.onscroll = function(){
 	if(window_width > 479){
