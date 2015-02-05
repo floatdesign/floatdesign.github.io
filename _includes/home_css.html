@@ -1,0 +1,77 @@
+<style>
+	#home {
+		position:relative;
+		text-align:center;
+		z-index:-1;
+		width:100%;
+		min-height:100%;
+		
+		display: flex;
+		align-items: center;
+	}
+
+	#home .center-content{
+		margin:auto;
+	}
+
+	.fixed-center-wrapper{
+		background: url("../../images/orange.jpg") center center no-repeat;
+		background-size: cover;
+		position: fixed;
+		transform: translate3d(0,0,0);
+		-webkit-backface-visibility: hidden;
+		transform-style:flat;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		top:0;
+		z-index:0;
+		@include mq(phone){
+			background: url("../../images/orange-mobile.jpg") center center no-repeat;
+			background-size: cover;
+		}
+	}
+	.fixed-center-content{
+		z-index: 0;
+		margin: auto;
+	}
+
+	#home p{
+		font-size:1.8em;
+		font-weight:normal;
+		font-family: 'Lato';
+		letter-spacing: 18px;
+		text-transform: uppercase;
+		color:#ff7d25;
+		font-weight: 400;
+		margin-bottom:0;
+		margin-top:20px;
+		padding:0;
+		padding-left: 10px;
+		opacity: 1 !important;
+	}
+	@media only screen and (max-width: 479px){
+		#home p{
+			font-size: 1.5em;
+			letter-spacing: 16px;
+			padding-left: 15px;
+		}
+	}
+
+	.logo1{
+		width:400px;
+		height: 400px * 0.362;
+		opacity: 1 !important;
+	}
+
+	.logo1 use{
+			fill: #ff7d25;
+	}
+
+	@media only screen and (max-width: 479px){
+		.logo1{
+			width: 300px;
+			height: 300px * 0.362;
+		}
+	}
+</style>
