@@ -26,10 +26,6 @@
 		display: flex;
 		top:0;
 		z-index:0;
-		@include mq(phone){
-			background: url("../../images/orange-mobile.jpg") center center no-repeat;
-			background-size: cover;
-		}
 	}
 	.fixed-center-content{
 		z-index: 0;
@@ -50,13 +46,6 @@
 		padding-left: 10px;
 		opacity: 1 !important;
 	}
-	@media only screen and (max-width: 479px){
-		#home p{
-			font-size: 1.5em;
-			letter-spacing: 16px;
-			padding-left: 15px;
-		}
-	}
 
 	.logo1{
 		width:400px;
@@ -68,10 +57,100 @@
 			fill: #ff7d25;
 	}
 
+	.mobile-clicker{
+		display:none;
+		position: fixed;
+		bottom: 20px;
+		right:10px;
+		z-index: 1000;
+		width: 60px;
+		height: 60px;
+		background: #fafafa;
+		box-shadow: -1px 1px 10px -4px #000;
+		border-radius: 50px;
+		cursor: pointer;
+		transform: translateZ(0);
+		transition: all .3s ease-in-out, right .3s ease-in-out;
+	}
+	#f{
+		width:60px;
+		height:50px;
+		margin-top: 5px;
+		transition: all .3s ease-in-out;
+		transform: rotate(0deg);
+	}
+
+	#f use{
+		fill: #ff7d25;
+		/* transition: fill .3s ease-in-out; */
+	}
+
+	.mobile-menu{
+		height: 100%;
+		width: 100%;
+		background: rgba(230, 230, 230, 0.9);
+		position: fixed;
+		top:0;
+		opacity: 0;
+		z-index: 100;
+		pointer-events:none;
+		transition: opacity .3s ease-in-out/* , background .3s ease-in-out */;
+	}
+
+	.mobile-menu ul{
+		z-index: 1000;
+		list-style-type: none;
+		position: absolute;
+		right: 0px;
+		bottom: 120px;
+		margin: 0;
+		width: 100%;
+		text-align: right;
+	}
+
+	.mobile-menu ul	li{
+		height: 50px;
+		background: #fafafa;
+		margin-bottom: 1px;
+	}
+
+	.mobile-menu ul	li a{
+		color: #ff7d25;
+		font-size: 1.5em;
+		line-height: 50px;
+		display: block;
+		width: 100%;
+		padding-right: 65px;
+	}
+
+	.mobile-menu svg{
+		height: 35px;
+		width: 40px;
+		margin-top: 7.5px;
+		margin-right: 20px;
+		margin-left: 10px;
+		vertical-align: top;
+	}
+
 	@media only screen and (max-width: 479px){
 		.logo1{
 			width: 300px;
 			height: 300px * 0.362;
+		}
+
+		.mobile-clicker{
+			display: block;
+		}
+
+		#home p{
+			font-size: 1.5em;
+			letter-spacing: 16px;
+			padding-left: 15px;
+		}
+
+		.fixed-center-wrapper{
+			background: url("../../images/orange-mobile.jpg") center center no-repeat;
+			background-size: cover;
 		}
 	}
 </style>
