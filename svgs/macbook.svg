@@ -13,6 +13,6 @@
 <circle fill="#FF7D25" cx="2043.009" cy="94.15" r="22"/>
 <path fill="none" stroke="#FF7D25" stroke-width="23" stroke-miterlimit="10" d="M2308.177,2255.676
 	c-15.34,47.13-59.88,42.33-59.88,42.33h-433c0,0-44.76,5.51-60-42.33H2308.177z"/>
-<rect x="486.18" y="164.971" fill="none" stroke="#FF7D25" stroke-width="8.9789" stroke-miterlimit="10" width="3095.381" height="1910.615"/>
-<image id="screen" class="desktop-screen" x="486.18" y="164.971" width="3095.381" height="1910.615" xlink:href="images/forge-desktop.jpg"></image>
+<rect x="503.18" y="164.971" fill="none" stroke="#FF7D25" stroke-width="8.9789" stroke-miterlimit="10" width="3059.381" height="1910.615"/>
+<image id="screen" class="desktop-screen" x="486.18" y="170.971" width="3095.381" height="1900.615" xlink:href="images/forge-desktop.jpg"></image>
 </svg>

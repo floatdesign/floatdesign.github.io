@@ -11,5 +11,5 @@
 	c0,52.887-42.873,95.762-95.76,95.762H113.556c-52.887,0-95.76-42.875-95.76-95.762V118.187c0-52.887,42.873-95.76,95.76-95.76
 	h1563.977c52.887,0,95.76,42.873,95.76,95.76L1773.292,2417.243L1773.292,2417.243z"/>
 <rect x="120.618" y="238.816" fill="none" stroke="#FF7D25" stroke-width="9" stroke-miterlimit="10" width="1554.156" height="2059.34"/>
-<image id="screen" class="tablet-screen" x="120.618" y="238.816" width="1554.156" height="2059.34" xlink:href="images/forge-tablet.jpg"></image>
+<image id="screen" class="tablet-screen" x="120.618" y="245.816" width="1554.156" height="2050.34" xlink:href="images/forge-tablet.jpg"></image>
 </svg>
