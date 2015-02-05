@@ -1,4 +1,4 @@
-/* .mobile-clicker{
+.mobile-clicker{
 	display:none;
 	position: fixed;
 	bottom: 20px;
@@ -75,18 +75,18 @@
 			}
 		}
 	}
-} */
+}
 
-/* .open{
-	opacity: 1 !important;
-	pointer-events: auto !important;
+.open{
+	opacity: 1;
+	pointer-events: auto;
 }
 
 .rotate{
-	background: none !important;
-	box-shadow: none !important;
+	background: none;
+	box-shadow: none;
 
 	#f{
 		transform: rotate(180deg);
 	}
-} */
+}

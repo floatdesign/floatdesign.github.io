@@ -34,7 +34,7 @@ module.exports = function(grunt) {
       options: {
         prefix : 'icon-', // This will prefix each <symbol> ID
         svg: {
-          style: 'position: absolute; top: 0;'
+          style: 'position: absolute; top: 0; z-index:-10'
         }
       },
       default : {
