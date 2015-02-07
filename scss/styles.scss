@@ -767,16 +767,48 @@ body{
 			width: 100%;
 		}
 
+		.submit{
+			height: 40px;
+			position: relative;
+
+			.svg-wrap{
+			    height: 40px;
+			    width: 100%;
+			    display: block;
+			    position: absolute;
+			    visibility: hidden;
+			    top: 0;
+			    z-index: 0;
+			    transition: all .3s ease-in-out;
+			    left: 0px;
+
+			    svg{
+			    	width: 100%;
+			    	height: 100%;
+
+			    	use{
+			    		fill: $float-white;
+			    	}
+			    }
+			}
+			.svg-wrap.success{
+				visibility: visible;
+				left: 100px;
+			}
+		}
+
 		button {
 		  border-radius: 3px;
 		  border: 2px solid $float-white;
+		  position: relative;
+		  z-index: 1;
 		  font-size: 0.9rem;
-		  padding: 0.5rem 0.8em;
 		  background: $float-white;
 		  color: $float-orange;
 		  -webkit-font-smoothing: antialiased;
 		  font-weight: bold;
 		  margin: 0;
+		  height: 40px;
 		  width: 33%;
 		  opacity: 1;
 		}

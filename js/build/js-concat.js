@@ -495,24 +495,7 @@ window.onresize = function(){
 	    requestAnimationFrame(fade_at_top);
 	}
 };
-;// $(function() {
-//     $('button').click(function() {
-//         var user = $('#txtUsername').val();
-//         var pass = $('#txtPassword').val();
-//         $.ajax({
-//             url: '/signUpUser',
-//             data: $('form').serialize(),
-//             type: 'POST',
-//             success: function(response) {
-//                 console.log(response);
-//             },
-//             error: function(error) {
-//                 console.log(error);
-//             }
-//         });
-//     });
-// });
-$(function() {
+;$(function() {
     // Get the form.
     var form = $('#ajax-contact');
 
@@ -526,7 +509,7 @@ $(function() {
 
         // Serialize the form data.
         var formData = $(form).serialize();
-        
+
         $.ajax({
             url: $(form).attr('action'),
             data: formData,
@@ -536,7 +519,11 @@ $(function() {
                 $(formMessages).addClass('success');
 
                 // Set the message text.
-                $(formMessages).text(response);
+               // $(formMessages).text(response);
+                $('#contact .svg-wrap').addClass('success');
+                setTimeout(function(){
+                    $('#contact .svg-wrap').removeClass('success');
+                }, 500);
 
                 // Clear the form.
                 $('#clientname').val('');
@@ -556,38 +543,5 @@ $(function() {
                 }
             }
         });
-        // Submit the form using AJAX.
-        // $.ajax({
-        //     type: 'POST',
-        //     url: $(form).attr('action'),
-        //     data: formData
-        // })
-        // .done(function(response) {
-        //     // Make sure that the formMessages div has the 'success' class.
-        //     $(formMessages).removeClass('error');
-        //     $(formMessages).addClass('success');
-
-        //     // Set the message text.
-        //     $(formMessages).text(response);
-
-        //     // Clear the form.
-        //     $('#clientname').val('');
-        //     $('#email').val('');
-        //     $('#companyname').val('');
-        //     $('#description').val('');
-        // })
-        // .fail(function(data) {
-        //     // Make sure that the formMessages div has the 'error' class.
-        //     $(formMessages).removeClass('success');
-        //     $(formMessages).addClass('error');
-
-        //     // Set the message text.
-        //     if (data.responseText !== '') {
-        //         $(formMessages).text(data.responseText);
-        //     } else {
-        //         $(formMessages).text('Oops! An error occured and your message could not be sent.');
-        //     }
-        // });
-
     });
 });

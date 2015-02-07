@@ -22,7 +22,11 @@ $(function() {
                 $(formMessages).addClass('success');
 
                 // Set the message text.
-                $(formMessages).text(response);
+               // $(formMessages).text(response);
+                $('#contact .svg-wrap').addClass('success');
+                setTimeout(function(){
+                    $('#contact .svg-wrap').removeClass('success');
+                }, 500);
 
                 // Clear the form.
                 $('#clientname').val('');
