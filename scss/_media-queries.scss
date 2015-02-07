@@ -39,6 +39,9 @@
 	@else if $point == screens5{
 		@media only screen and (max-width: 400px){@content;}
 	}
+	@else if $point == screens6{
+		@media only screen and (max-width: 350px){@content;}
+	}
 }
 
 @mixin mq_once($point){
