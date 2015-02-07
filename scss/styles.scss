@@ -776,7 +776,6 @@ body{
 			    width: 100%;
 			    display: block;
 			    position: absolute;
-			    visibility: hidden;
 			    top: 0;
 			    z-index: 0;
 			    transition: left .3s ease-in-out;
@@ -792,14 +791,13 @@ body{
 			    }
 			}
 			.svg-wrap.show-check{
-				visibility: visible;
 				left: 100px;
 			}
 		}
 
 		button {
 		  border-radius: 3px;
-		  border: 2px solid $float-white;
+		  border: none;
 		  position: relative;
 		  z-index: 1;
 		  font-size: 0.9rem;
@@ -812,16 +810,16 @@ body{
 		  width: 33%;
 		  outline: none;
 		  opacity: 1;
-		  transition: opacity: .2s ease-in-out;
+		  transition: all .2s ease-in-out;
 		}
 
 		button:hover, button:focus {
-			opacity: .9;
+			background: #ff7d25;
+			color: #fafafa;
 		  	cursor: pointer;
 		}
 
 		button:active {
-		  	opacity: 1;
 		  	box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.1) inset;
 		}
 				
