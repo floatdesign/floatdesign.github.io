@@ -520,9 +520,9 @@ window.onresize = function(){
 
                 // Set the message text.
                // $(formMessages).text(response);
-                $('#contact .svg-wrap').addClass('success');
+                $('#contact .svg-wrap').addClass('show-check');
                 setTimeout(function(){
-                    $('#contact .svg-wrap').removeClass('success');
+                    $('#contact .svg-wrap').removeClass('show-check');
                 }, 800);
 
                 // Clear the form.
