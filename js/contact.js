@@ -26,7 +26,7 @@ $(function() {
                 $('#contact .svg-wrap').addClass('success');
                 setTimeout(function(){
                     $('#contact .svg-wrap').removeClass('success');
-                }, 500);
+                }, 800);
 
                 // Clear the form.
                 $('#clientname').val('');

@@ -776,7 +776,6 @@ body{
 			    width: 100%;
 			    display: block;
 			    position: absolute;
-			    visibility: hidden;
 			    top: 0;
 			    z-index: 0;
 			    transition: all .3s ease-in-out;
@@ -792,7 +791,6 @@ body{
 			    }
 			}
 			.svg-wrap.success{
-				visibility: visible;
 				left: 100px;
 			}
 		}
@@ -814,7 +812,6 @@ body{
 		}
 
 		button:hover, button:focus {
-		  opacity: 0.75;
 		  cursor: pointer;
 		}
 
