@@ -516,7 +516,7 @@ window.onresize = function(){
             type: 'POST',
             success: function(response) {
                 $(formMessages).removeClass('error');
-                $(formMessages).addClass('success');
+               // $(formMessages).addClass('success');
 
                 // Set the message text.
                // $(formMessages).text(response);
