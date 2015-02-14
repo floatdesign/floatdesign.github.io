@@ -1,7 +1,7 @@
 'use strict';
 var window_width = window.innerWidth,
 	fixed = document.getElementById('fixed'),
-	lastKnownScrollY = window.scrollY;
+	lastKnownScrollY = window.pageYOffset;
 
 if(window_width > 479){
 	parallax();
@@ -15,7 +15,7 @@ reset_vars();
 
 window.onscroll = function(){
 	if(window_width > 479){
-		lastKnownScrollY = window.scrollY;
+		lastKnownScrollY = window.pageYOffset;
 		logoBottom = lastKnownScrollY + 60;
 		logoTop = lastKnownScrollY + 20;
 
