@@ -14,7 +14,7 @@ works_slider();
 reset_vars();
 
 window.onscroll = function(){
-	if(window_width > 479){
+	//if(window_width > 479){
 		lastKnownScrollY = window.pageYOffset;
 		logoBottom = lastKnownScrollY + 60;
 		logoTop = lastKnownScrollY + 20;
@@ -24,7 +24,7 @@ window.onscroll = function(){
 		requestAnimationFrame(sticky_nav);
 		requestAnimationFrame(fade_at_top);
 		requestAnimationFrame(logo_fill);
-	}
+	//}
 };
 
 window.onresize = function(){
