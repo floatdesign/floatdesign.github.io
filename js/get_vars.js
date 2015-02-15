@@ -8,9 +8,9 @@ var num_sections = 6,
 
 	windowHeight = window.innerHeight,
 	keepanim = false,
-	lastKnownScrollY,
-	logoBottom,
-	logoTop,
+	lastKnownScrollY = window.pageYOffset,
+	logoBottom = lastKnownScrollY + 60,
+	logoTop = lastKnownScrollY + 20,
 	sections = [mission, process, servicesIntro, servicesBody, works, contact],
 
 	sectionOffset = [],
