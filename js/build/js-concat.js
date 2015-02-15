@@ -523,7 +523,7 @@ window.onresize = function(){
                 $('#contact .svg-wrap').addClass('show-check');
                 setTimeout(function(){
                     $('#contact .svg-wrap').removeClass('show-check');
-                }, 800);
+                }, 1300);
 
                 // Clear the form.
                 $('#clientname').val('');

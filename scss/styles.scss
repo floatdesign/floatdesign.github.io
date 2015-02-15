@@ -716,18 +716,9 @@ body{
 		background: url("../../images/orange-city-mobile.jpg")  center center no-repeat;
 		background-size: cover;
 	}
-	.center-wrapper{
-	}
-
-	.center-content{
-		// background: $float-orange;
-		margin: auto;
-	}
 
 	h1{
-		@include mq(phone){
-			margin-top: 40px;
-		}
+		margin-top: 60px;
 	}
 
 	h4 {
@@ -759,18 +750,19 @@ body{
 
 	form {
 		display: inline-block;
-		width: 300px;
-		max-width: 100%;
-		color: $float-orange;
+		max-width: 550px;
+		width: 90%;
+		font-weight: 300;
+		color: $float-white;
 		
 		.formtext, .description {
 			width: 100%;
 			height: 30px;
-			padding-left: 10px;
+			padding-left: 20px;
+			padding-right: 20px;
 			border: none;
-			border-radius: 3px;
 			box-sizing: border-box;
-			background: $float-white;
+			background: rgba(255,125,37,0.9);
 			transition: background .1s ease-in-out;
 		}
 
@@ -779,23 +771,66 @@ body{
 		}
 
 		.description {
-			height: 200px;
+			border-left: 2px solid #fafafa;
+			border-right: 2px solid #fafafa;
+			border-bottom: 2px solid #fafafa;
+			border-bottom-left-radius: 3px;
+			border-bottom-right-radius: 3px;
+			font-size: 1.03em;
+			height: 220px;
 			padding-top: 5px;
 			resize: none;
 		}
 
 		::placeholder{
-			color: rgba(255,125,37, .75);
+			color: rgba(255,255,255, .75);
 			transition: all .2s ease-in-out;
 		}
 
 		.formline {
-			margin: 20px auto;
 			width: 100%;
+			border-left: 2px solid #fafafa;
+			border-right: 2px solid #fafafa;
+			box-sizing: border-box;
+		}
+
+		.formline:first-child{
+			border-top: 2px solid #fafafa;
+			border-right: 2px solid #fafafa;
+			border-left: 2px solid #fafafa;
+			font-size: 1.4em;
+			font-weight: 400;
+			border-top-left-radius: 3px;
+			border-top-right-radius: 3px;
+
+			input{
+				height: 50px;
+				padding-top: 20px;
+			}
+		}
+
+		.formline:nth-child(2){
+			input{
+				font-size: 1.2em;
+			}
+		}
+
+		.formline:nth-child(3){
+			input{
+				height: 50px;
+				padding-top: 20px;
+				font-size: 1.2em;
+				font-weight: 400;
+			}
+		}
+
+		.formline:last-child{
+			border: none;
 		}
 
 		.submit{
 			height: 40px;
+			margin-top: 20px;
 			position: relative;
 
 			.svg-wrap{
@@ -834,7 +869,7 @@ body{
 		  font-weight: bold;
 		  margin: 0;
 		  height: 40px;
-		  width: 33%;
+		  width: 100px;
 		  outline: none;
 		  opacity: 1;
 		  transition: all .2s ease-in-out;
@@ -854,7 +889,9 @@ body{
 
 	h3{
 		margin:0;
-		font-size: 1.4em;
+		margin-top: 40px;
+		font-size: 1.3em;
+		font-weight: 300;
 		@include mq(phone){
 			font-size: 1.8em;
 		}
@@ -863,7 +900,8 @@ body{
 	p{
 		max-width: 500px;
 		margin: auto;
-		font-weight: 400;
+		margin-bottom: 50px;
+		font-weight: 300;
 
 		@include mq(phone){
 			max-width: 90%;
@@ -871,7 +909,12 @@ body{
 	}
 
 	p.number{
-		margin-bottom: 30px;
+		font-weight: 300;
+		font-size: 1.3em;
+		@include mq(phone){
+			margin-bottom: 30px;
+		}
+
 		a{
 			color: $float-white;
 		}
@@ -879,9 +922,7 @@ body{
 
 	input:focus, #description:focus{
 		outline: none;
-		background: rgba(255,125,37, .80);
 		color: white;
-		border-color: $float-orange;
 	}
 
 	input:focus::placeholder, #description:focus::placeholder{
