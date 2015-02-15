@@ -31,7 +31,7 @@
 
 var fadeElements = document.querySelectorAll('.section h1, .section h2, .section p, .svg-wrap');
 var parallaxElems = document.querySelectorAll('.parallax h1, .parallax p');
-var parallaxContent = document.querySelectorAll('.parallax .center-content');
+var parallaxContent = document.querySelectorAll('.parallax .parallax-content');
 
 
 var getElemDistance = function ( elem ) {
