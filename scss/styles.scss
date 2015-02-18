@@ -408,7 +408,6 @@ body{
 
 	h1{
 		margin-bottom: 15px;
-		margin-top: 70px;
 
 		@include mq(phone){
 			margin-top: 40px;
@@ -685,6 +684,7 @@ body{
 	}
 
 	#site-desc{
+		margin-bottom: 0;
 		@include mq(phone){
 			margin-bottom: 40px;
 		}
@@ -796,8 +796,7 @@ body{
 			border-top-right-radius: 3px;
 
 			input{
-				height: 50px;
-				padding-top: 20px;
+				height: 40px;
 			}
 		}
 
@@ -809,8 +808,7 @@ body{
 
 		.formline:nth-child(3){
 			input{
-				height: 50px;
-				padding-top: 20px;
+				height: 40px;
 				font-size: 1.2em;
 				font-weight: 400;
 			}
