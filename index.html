@@ -304,34 +304,40 @@ title: floatdev
 </div>
 
 <div id="contact" class="section">
+    <div class="overlay">
 	<div class = "center-content">
 		<h1>Contact Us</h1>
 		<p>Lets talk about how we can bring your ideas to life.</p>
 		<div id="form-messages"></div>
 		<form id="ajax-contact" autocomplete="off" action="https://femail.herokuapp.com/send" method="post">
 			<div class = "formline">
-				<input type="text" class='formtext' id ='clientname' name="clientname" placeholder="Name" required>
+                <label>Name<span>*</span></label>
+				<input type="text" class='formtext' id ='clientname' name="clientname" required>
 			</div>
 			<div class = "formline">
-				 <input type="email" class='formtext' id ='email' name="email" placeholder="Email" required>
+                <label>Email<span>*</span></label>
+				<input type="email" class='formtext' id ='email' name="email" required>
 			</div>
 			<div class = "formline">
-				<input type="text" class='formtext' id ='companyname' name="companyname" placeholder="Company">
+                <label>Company Name</label>
+				<input type="text" class='formtext' id ='companyname' name="companyname">
 			</div>
-			<textarea class="description" id ='description' name="description" placeholder="Project Description" required></textarea>
+            <label>Project Description<span>*</span></label>
+			<textarea class="description" id ='description' name="description" required></textarea>
 			<div class="formline submit">
 				<button type="submit" id="serialize">Send</button>
-				<span class="svg-wrap">
+				<!--<span class="svg-wrap">
 					<svg>
 						<use xlink:href="#icon-check">
 					</svg>
-				</span>
+                    </span>-->
 			</div>
 
 		</form>
 		<h3>team@floatdev.com</h3>
 		<p class="number">650.731.2593</p>
 	</div>
+    </div>
 </div>
 <!-- end main -->
 
