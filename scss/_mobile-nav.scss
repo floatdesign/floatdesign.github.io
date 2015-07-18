@@ -6,7 +6,7 @@
 	z-index: 1000;
 	width: 60px;
 	height: 60px;
-	background: $float-white;
+	background: $white;
 	box-shadow: -1px 1px 10px -4px #000;
 	border-radius: 50px;
 	cursor: pointer;
@@ -53,12 +53,12 @@
 
 		li{
 			height: 50px;
-			background: $float-white;
+			background: $white;
 			margin-bottom: 1px;
 		}
 
 		li a{
-			color: $float-orange;
+			color: $orange;
 			font-size: 1.5em;
 			line-height: 50px;
 			display: block;

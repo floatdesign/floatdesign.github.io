@@ -9,6 +9,7 @@ $(function() {
     $(form).submit(function(event) {
         // Stop the browser from submitting the form.
         event.preventDefault();
+        $('.button-content').addClass('animate');
 
         // Serialize the form data.
         var formData = $(form).serialize();
@@ -23,10 +24,13 @@ $(function() {
 
                 // Set the message text.
                // $(formMessages).text(response);
-                $('#contact .svg-wrap').addClass('show-check');
-                setTimeout(function(){
-                    $('#contact .svg-wrap').removeClass('show-check');
-                }, 1300);
+                $('.svg-wrap').addClass('success');
+                $('button').mouseleave(function(){
+                    $('.button-content').removeClass('animate');
+                    setTimeout(function(){
+                        $('.svg-wrap').removeClass('success');  
+                    }, 200);
+                });
 
                 // Clear the form.
                 $('#clientname').val('');

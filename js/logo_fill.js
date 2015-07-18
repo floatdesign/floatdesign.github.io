@@ -3,7 +3,7 @@ function logo_fill(){
 		logoOffsetBottom    = logoBottom,
 		logoOffsetTop       = logoTop,
 	    
-	    white  = '#fafafa',
+	    white  = '#5a5a5a',
 	    orange = '#ff7d25',
 
 
