@@ -1,8 +1,7 @@
-var num_sections = 6,
-	mission = document.getElementById('mission'),
+var num_sections = 5,
 	process = document.getElementById('process'),
-	servicesIntro = document.getElementById('servicesIntro'),
-	servicesBody = document.getElementById('servicesBody'),
+	servicesIntro = document.getElementById('services-intro'),
+	servicesBody = document.getElementById('services-body'),
 	works = document.getElementById('works'),
 	contact = document.getElementById('contact'),
 
@@ -11,7 +10,7 @@ var num_sections = 6,
 	lastKnownScrollY = window.pageYOffset,
 	logoBottom = lastKnownScrollY + 60,
 	logoTop = lastKnownScrollY + 20,
-	sections = [mission, process, servicesIntro, servicesBody, works, contact],
+	sections = [works, process, servicesIntro, servicesBody, contact],
 
 	sectionOffset = [],
 	sectionOffsetBottom = [],
@@ -50,7 +49,6 @@ setTimeout(function(){
 		fadeElemHeight[i] = elem.clientHeight;
 		fadeElemOffset[i] = getElemDistance(elem);
 		elem.classList.add('hard-accell');
-		// console.log(elem, fadeElemOffset[i]);
 	});
 
 	[].forEach.call(parallaxElems, function(elem, i, a){
@@ -62,6 +60,5 @@ setTimeout(function(){
 		sectionOffset[i] = getElemDistance(sections[i]);
 		sectionOffsetBottom[i] = sectionOffset[i] + sectionHeight[i];
 	}
-	parallaxSectionOffset[0] = sectionOffset[0];
-	parallaxSectionOffset[1] = sectionOffset[2];
+	parallaxSectionOffset[0] = sectionOffset[2];
 }, 200);

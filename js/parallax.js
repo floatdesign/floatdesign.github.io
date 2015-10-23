@@ -8,8 +8,8 @@ function parallax(){
 			elem.style.transform = 'translate3d(0,' + translate + ',0)';
 			elem.style.webkitTransform = 'translate3d(0,' + translate + ',0)';
 			if(i == 0){
-				fadeElemOffset[0] = parallaxElemOffset[0] + parseInt(translate);
-				fadeElemOffset[1] = parallaxElemOffset[1] + parseInt(translate);
+				fadeElemOffset[20] = parallaxElemOffset[0] + parseInt(translate);
+				fadeElemOffset[21] = parallaxElemOffset[1] + parseInt(translate);
 			}
 			else{
 				fadeElemOffset[16] = parallaxElemOffset[2] + parseInt(translate);

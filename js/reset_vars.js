@@ -20,7 +20,6 @@ function reset_vars(){
 			sectionOffset[i] = getElemDistance(sections[i]);
 			sectionOffsetBottom[i] = sectionOffset[i] + sectionHeight[i];
 		}
-		parallaxSectionOffset[0] = sectionOffset[0];
-		parallaxSectionOffset[1] = sectionOffset[2];
+		parallaxSectionOffset[0] = sectionOffset[2];
 	}, 200);
 }

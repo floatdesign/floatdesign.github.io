@@ -1,0 +1,90 @@
+.works {
+
+	h1 {
+		padding-bottom: 40px;
+	}
+}
+
+.project-forge {
+	background: url('../images/build/project-forge.jpg') no-repeat center center;
+}
+
+.project-creekside {
+	background: url('../images/build/project-creekside.jpg') no-repeat center center;
+}	
+
+.project {
+	@include span(50%);
+	height: 250px;
+	background-size: cover;
+
+	@include media("<desktop") {
+		margin: 0;	
+	}
+
+	@include media(">desktop") {
+		@include span(6);
+
+		&:last-child{
+			@include span(6 last);
+		}
+	}
+
+	a {
+		display: block;
+		width: 100%;
+		height: 100%;
+		position: relative;
+		background: rgba($white, .7);
+		text-align: center;
+
+		svg, img {
+			transition: opacity .2s ease-in-out;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			margin: auto;
+			opacity: 1;
+			height: 150px;
+		}
+
+		.info-wrap {
+			opacity: 0;
+			text-align: center;
+			display: block;
+			color: $black;
+			position: relative;
+			top: 50%;
+			transform: translate3d(0, -50%, 0);
+			transition: opacity .2s ease-in-out;
+
+			span { 
+				font-size: 1em;
+				margin: 0;
+				opacity: 0;
+				display: block;
+
+				&:first-child{
+					font-family: 'Oswald'; 
+					font-size: 2em;
+					text-transform: uppercase;
+				}
+			}
+		}
+
+		&:hover {
+			svg, img{
+				opacity:0;
+			}
+
+			span {
+				opacity: 1;
+				p{
+					opacity: 1;
+				}
+			}
+		}
+	}
+}

@@ -1,6 +1,8 @@
+@import "../bower_components/include-media/dist/include-media.scss";
+@import "../bower_components/susy/sass/susy";
+@import "_susy-settings.scss";
 @import "normalize";
 @import "variables";
-@import "media-queries";
 @import "typography";
 @import "mobile-nav";
 @import "dot-nav";

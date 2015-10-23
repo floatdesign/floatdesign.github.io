@@ -3,7 +3,7 @@ function logo_fill(){
 		logoOffsetBottom    = logoBottom,
 		logoOffsetTop       = logoTop,
 	    
-	    white  = '#5a5a5a',
+	    white  = '#fafafa',
 	    orange = '#ff7d25',
 
 
@@ -27,27 +27,15 @@ function logo_fill(){
 			stop2.setAttribute('offset', gradientPercentage);
 	    };
 
-	[].forEach.call(sections, function(elem, i, a){
-		if(sectionOffset[i] <= logoOffsetBottom && sectionOffset[i] >= logoOffsetTop){
-			if(i!=0){
-				if(i%2 == 0){
-					gradientStopColors(white, orange);
-				}
-				else{
-					gradientStopColors(orange, white);
-				}
-				animateGradient(sectionOffset[i]);
-			}
-		}
-		
-		else if(sectionOffset[i] < logoOffsetBottom){
-			if(i%2 == 0){
-				gradientStopColors(white, orange);
-			}
-			else{
-				gradientStopColors(orange, white);
-			}
-			animateGradient(0);
-		}
-	});
+	var loc = document.getElementById('services-intro');
+	var locOffset = loc.offsetTop;
+	if(locOffset <= logoOffsetBottom && locOffset >= logoOffsetTop) {
+		gradientStopColors(orange, white);
+		animateGradient(locOffset);
+	}
+
+	else{
+		gradientStopColors(white, orange);
+		animateGradient(0);
+	}
 };

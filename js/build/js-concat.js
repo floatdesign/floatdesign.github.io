@@ -56,11 +56,10 @@
         });
     });
 });
-;var num_sections = 6,
-	mission = document.getElementById('mission'),
+;var num_sections = 5,
 	process = document.getElementById('process'),
-	servicesIntro = document.getElementById('servicesIntro'),
-	servicesBody = document.getElementById('servicesBody'),
+	servicesIntro = document.getElementById('services-intro'),
+	servicesBody = document.getElementById('services-body'),
 	works = document.getElementById('works'),
 	contact = document.getElementById('contact'),
 
@@ -69,7 +68,7 @@
 	lastKnownScrollY = window.pageYOffset,
 	logoBottom = lastKnownScrollY + 60,
 	logoTop = lastKnownScrollY + 20,
-	sections = [mission, process, servicesIntro, servicesBody, works, contact],
+	sections = [works, process, servicesIntro, servicesBody, contact],
 
 	sectionOffset = [],
 	sectionOffsetBottom = [],
@@ -108,7 +107,6 @@ setTimeout(function(){
 		fadeElemHeight[i] = elem.clientHeight;
 		fadeElemOffset[i] = getElemDistance(elem);
 		elem.classList.add('hard-accell');
-		// console.log(elem, fadeElemOffset[i]);
 	});
 
 	[].forEach.call(parallaxElems, function(elem, i, a){
@@ -120,8 +118,7 @@ setTimeout(function(){
 		sectionOffset[i] = getElemDistance(sections[i]);
 		sectionOffsetBottom[i] = sectionOffset[i] + sectionHeight[i];
 	}
-	parallaxSectionOffset[0] = sectionOffset[0];
-	parallaxSectionOffset[1] = sectionOffset[2];
+	parallaxSectionOffset[0] = sectionOffset[2];
 }, 200);
 ;function fade_at_top(){
 	[].forEach.call(fadeElements, function(elem, i, a){
@@ -169,7 +166,7 @@ setTimeout(function(){
 		logoOffsetBottom    = logoBottom,
 		logoOffsetTop       = logoTop,
 	    
-	    white  = '#5a5a5a',
+	    white  = '#fafafa',
 	    orange = '#ff7d25',
 
 
@@ -193,29 +190,17 @@ setTimeout(function(){
 			stop2.setAttribute('offset', gradientPercentage);
 	    };
 
-	[].forEach.call(sections, function(elem, i, a){
-		if(sectionOffset[i] <= logoOffsetBottom && sectionOffset[i] >= logoOffsetTop){
-			if(i!=0){
-				if(i%2 == 0){
-					gradientStopColors(white, orange);
-				}
-				else{
-					gradientStopColors(orange, white);
-				}
-				animateGradient(sectionOffset[i]);
-			}
-		}
-		
-		else if(sectionOffset[i] < logoOffsetBottom){
-			if(i%2 == 0){
-				gradientStopColors(white, orange);
-			}
-			else{
-				gradientStopColors(orange, white);
-			}
-			animateGradient(0);
-		}
-	});
+	var loc = document.getElementById('services-intro');
+	var locOffset = loc.offsetTop;
+	if(locOffset <= logoOffsetBottom && locOffset >= logoOffsetTop) {
+		gradientStopColors(orange, white);
+		animateGradient(locOffset);
+	}
+
+	else{
+		gradientStopColors(white, orange);
+		animateGradient(0);
+	}
 };;function mobile_nav(){
 	var to_f1 = document.getElementById('x-transform-animation-to-f1'),
 		to_f2 = document.getElementById('x-transform-animation-to-f2'),
@@ -279,8 +264,7 @@ menu.addEventListener('touchmove', function(e){
 			sectionOffset[i] = getElemDistance(sections[i]);
 			sectionOffsetBottom[i] = sectionOffset[i] + sectionHeight[i];
 		}
-		parallaxSectionOffset[0] = sectionOffset[0];
-		parallaxSectionOffset[1] = sectionOffset[2];
+		parallaxSectionOffset[0] = sectionOffset[2];
 	}, 200);
 };var elems = document.querySelectorAll('.dots a');
 Array.prototype.forEach.call(elems, function(index){
@@ -345,7 +329,7 @@ Array.prototype.forEach.call(links, function(index){
             }, 150);
         }, 400);
     });
-});;var stickPoint = document.getElementById('mission').offsetTop; //stick when second section reaches top
+});;var stickPoint = document.getElementById('works').offsetTop; //stick when second section reaches top
 var triggered = 0;
 function sticky_nav(){
 	if(stickPoint <= lastKnownScrollY && triggered === 0){
@@ -493,8 +477,8 @@ function sticky_nav(){
 			elem.style.transform = 'translate3d(0,' + translate + ',0)';
 			elem.style.webkitTransform = 'translate3d(0,' + translate + ',0)';
 			if(i == 0){
-				fadeElemOffset[0] = parallaxElemOffset[0] + parseInt(translate);
-				fadeElemOffset[1] = parallaxElemOffset[1] + parseInt(translate);
+				fadeElemOffset[20] = parallaxElemOffset[0] + parseInt(translate);
+				fadeElemOffset[21] = parallaxElemOffset[1] + parseInt(translate);
 			}
 			else{
 				fadeElemOffset[16] = parallaxElemOffset[2] + parseInt(translate);
